@@ -1,0 +1,23 @@
+server:
+  port: 8880
+logging.level.org.springframework.cloud.contract: debug
+#stubrunner:
+#  repository-root: stubs:classpath:/stubs/
+#  ids: my:stubs
+#  stubs-mode: remote
+#kafka:
+#  initializer:
+#    enabled: true
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+          value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+          properties:
+            max:
+              poll:
+                interval:
+                  ms: 900000

@@ -1,0 +1,10 @@
+label: trigger_label
+input:
+  triggeredBy: trigger()
+outputMessage:
+  sentTo: kafka_topic
+  body:
+    bookName: foo
+  headers:
+    BOOK-NAME: foo
+    contentType: application/json
